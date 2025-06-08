@@ -62,6 +62,12 @@
             padding-left: 1.5rem;
         }
 
+        ul {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1rem
+        }
+
         /* Links */
         a {
             color: #2980b9;
@@ -217,15 +223,32 @@
 
         <h2 id="index">Index</h2>
         <nav>
-            <a href="#getting-started">Getting Started</a>
-            <a href="#import">Import</a>
-            <a href="#cli-usage">CLI Usage</a>
-            <a href="#examples">Examples</a>
-            <a href="#regexbuilder---beginner-friendly-api">RegexBuilder - Beginner-Friendly API</a>
-            <a href="#built-in-validators">Built-in Validators</a>
-            <a href="#license">License</a>
-            <a href="#contributing">Contributing</a>
-            <a href="#connect-with-me">Connect with Me</a>
+            <ul>
+                <li><a href="#getting-started">Getting Started</a></li>
+                <li><a href="#import">Import</a></li>
+                <li><a href="#cli-usage">CLI Usage</a></li>
+                <li><a href="#examples">Examples</a></li>
+                <li><a href="#regexbuilder---beginner-friendly-api">RegexBuilder - Beginner-Friendly API </a>
+                    <ul>
+                        <li><a href="#character-classes">Character Classes</a></li>
+                        <li><a href="#quantifiers">Quantifiers</a></li>
+                        <li><a href="#anchors-and-structure">Anchors & Structure</a></li>
+                        <li><a href="#grouping-and-logic">Grouping & Logic</a></li>
+                        <li><a href="#output-and-testing">Output & Testing</a></li>
+                    </ul>
+                </li>
+                <li><a href="#built-in-validators">Built-in Validators </a>
+                    <ul>
+                        <li><a href="#general-validators">General Validators</a></li>
+                        <li><a href="#format-and-pattern-validators">Format & Pattern Validators</a></li>
+                        <li><a href="#date-and-time-validators">Date & Time Validators</a></li>
+                        <li><a href="#network-validators">Network Validators</a></li>
+                    </ul>
+                </li>
+                <li><a href="#license">License</a></li>
+                <li><a href="#contributing">Contributing</a></li>
+                <li><a href="#connect-with-me">Connect with Me</a></li>
+            </ul>
         </nav>
 
         <h2 id="getting-started">Getting Started</h2>
@@ -267,7 +290,7 @@ console.log(isValidEmail); // true
         </code></pre>
 
         <h2 id="regexbuilder---beginner-friendly-api">RegexBuilder - Beginner-Friendly API</h2>
-        <h3>Character Classes</h3>
+        <h3 id="character-classes">Character Classes</h3>
         <table>
             <thead>
                 <tr>
@@ -342,7 +365,7 @@ console.log(isValidEmail); // true
             </tbody>
         </table>
 
-        <h3>Quantifiers</h3>
+        <h3 id="quantifiers">Quantifiers</h3>
         <table>
             <thead>
                 <tr>
@@ -396,7 +419,7 @@ console.log(isValidEmail); // true
             </tbody>
         </table>
 
-        <h3>Anchors &amp; Structure</h3>
+        <h3 id="anchors-and-structure">Anchors &amp; Structure</h3>
         <table>
             <thead>
                 <tr>
@@ -424,7 +447,7 @@ console.log(isValidEmail); // true
             </tbody>
         </table>
 
-        <h3>Grouping &amp; Logic</h3>
+        <h3 id="grouping-and-logic">Grouping &amp; Logic</h3>
         <table>
             <thead>
                 <tr>
@@ -481,7 +504,7 @@ console.log(isValidEmail); // true
             </tbody>
         </table>
 
-        <h3>Output &amp; Testing</h3>
+        <h3 id="output-and-testing">Output &amp; Testing</h3>
         <table>
             <thead>
                 <tr>
@@ -516,11 +539,11 @@ console.log(isValidEmail); // true
             </tbody>
         </table>
 
-        <h2>Built-in Validators</h2>
+        <h2 id="built-in-validators">Built-in Validators</h2>
         <p>Use the <code>validate</code> function with the validator name and the value to check if it
             is valid.</p>
 
-        <h3>General Validators</h3>
+        <h3 id="general-validators">General Validators</h3>
         <table>
             <thead>
                 <tr>
@@ -554,7 +577,7 @@ console.log(isValidEmail); // true
             </tbody>
         </table>
 
-        <h3>Format & Pattern Validators</h3>
+        <h3 id="format-and-pattern-validators">Format & Pattern Validators</h3>
         <table>
             <thead>
                 <tr>
@@ -592,7 +615,7 @@ console.log(isValidEmail); // true
             </tbody>
         </table>
 
-        <h3>Date & Time Validators</h3>
+        <h3 id="date-and-time-validators">Date & Time Validators</h3>
         <table>
             <thead>
                 <tr>
@@ -615,7 +638,7 @@ console.log(isValidEmail); // true
             </tbody>
         </table>
 
-        <h3>Network Validators</h3>
+        <h3 id="network-validators">Network Validators</h3>
         <table>
             <thead>
                 <tr>
@@ -635,17 +658,17 @@ console.log(isValidEmail); // true
 
         <hr />
 
-        <h2>License</h2>
+        <h2 id="license">License</h2>
         <p>This project is licensed under the <a href="https://opensource.org/licenses/MIT" target="_blank"
                 rel="noopener noreferrer">MIT License</a>.
             Feel free to use, modify, and distribute it freely.</p>
 
-        <h2>Contributing</h2>
+        <h2 id="contributing">Contributing</h2>
         <p>Contributions, issues, and feature requests are welcome!<br />
             Feel free to check the <a href="https://github.com/tufanmahanty/regex-builder/issues" target="_blank"
                 rel="noopener noreferrer">issues page</a> or submit a pull request.</p>
 
-        <h2>Connect with Me</h2>
+        <h2 id="connect-with-me">Connect with Me</h2>
         <ul>
             <li><a href="https://github.com/tufanmahanty" target="_blank" rel="noopener noreferrer">GitHub</a></li>
             <li><a href="https://www.linkedin.com/in/tufanmahanty/" target="_blank"
