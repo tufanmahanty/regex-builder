@@ -2,7 +2,6 @@
 
 ![npm](https://img.shields.io/npm/v/regex-builder)
 ![license](https://img.shields.io/npm/l/regex-builder)
-![build](https://img.shields.io/github/actions/workflow/status/tufanmahanty/regex-builder/build.yml)
 ![typescript](https://img.shields.io/badge/Made%20with-TypeScript-blue)
 
 ## Core Features
