@@ -25,7 +25,13 @@
     "builder",
     "typescript",
     "validator",
-    "cli"
+    "cli",
+    "regex-builder",
+    "regex-validator",
+    "regex-cli",
+    "smart-regex",
+    "regexp",
+    "validation"
   ],
   "author": "Tufan Mahanty",
   "license": "MIT",
