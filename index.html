@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Regex-Builder Documentation</title>
+    <style>
+        /* Reset box-sizing */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        /* Body and typography */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+                Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            background: #f9f9f9;
+            color: #333;
+            margin: 2rem;
+            line-height: 1.6;
+        }
+
+        /* Headings */
+        h1,
+        h2,
+        h3,
+        h4 {
+            color: #2c3e50;
+            margin-top: 2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 0.25rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        p,
+        ul,
+        ol,
+        table {
+            margin-top: 0;
+            margin-bottom: 1.25rem;
+        }
+
+        ul,
+        ol {
+            padding-left: 1.5rem;
+        }
+
+        /* Links */
+        a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+
+        a:hover,
+        a:focus {
+            text-decoration: underline;
+        }
+
+        /* Code blocks */
+        code {
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-family: 'Courier New', Courier, monospace, Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+            font-size: 1em;
+        }
+
+        pre {
+            background: #272822;
+            color: #f8f8f2;
+            padding: 1em;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 0.9em;
+        }
+
+        /* Blockquote */
+        blockquote {
+            border-left: 4px solid #0366d6;
+            margin-left: 0;
+            padding-left: 1rem;
+            color: #555;
+            font-style: italic;
+        }
+
+        /* Badges container */
+        .badges {
+            display: flex;
+            gap: 0.5rem;
+            margin: 1rem 0 2rem 0;
+        }
+
+        .badges img {
+            height: 24px;
+            display: inline-block;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1.5rem;
+            max-width: 100%;
+        }
+
+        thead {
+            background-color: #34495e;
+            color: white;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 0.6rem 1rem;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f5f8fa;
+        }
+
+        /* Navigation index links */
+        #index a {
+            display: inline-block;
+            margin-right: 1rem;
+            color: #2980b9;
+        }
+
+        #index a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid #ddd;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem 3rem;
+            border-radius: 8px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            body {
+                margin: 1rem;
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+            }
+
+            .container {
+                padding: 1rem 1.5rem;
+            }
+
+            table th,
+            table td {
+                font-size: 0.9rem;
+                padding: 0.4rem 0.6rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Regex-Builder : Build Custom Regular Expressions with Ease</h1>
+        <div class="badges" aria-label="npm version, license, build status, typescript badge">
+            <img src="https://img.shields.io/npm/v/regex-builder" alt="npm version" />
+            <img src="https://img.shields.io/npm/l/regex-builder" alt="license" />
+            <img src="https://img.shields.io/github/actions/workflow/status/tufanmahanty/regex-builder/build.yml"
+                alt="build status" />
+            <img src="https://img.shields.io/badge/Made%20with-TypeScript-blue" alt="typescript" />
+        </div>
+
+        <h2>Core Features</h2>
+        <ul>
+            <li>Chainable, easy-to-use API for building custom regex patterns.</li>
+            <li>Built-in validators and character classes for common use cases.</li>
+            <li>Clear and readable regex construction for better maintainability.</li>
+            <li>Full customization with raw regex support.</li>
+            <li>Works seamlessly in Node.js and browser environments.</li>
+            <li>Includes a handy CLI for quick regex testing.</li>
+            <li>Developed with TypeScript for type safety and better tooling.</li>
+            <li>Compatible with both CommonJS and ES6 module systems.</li>
+        </ul>
+
+        <h2 id="index">Index</h2>
+        <nav>
+            <a href="#getting-started">Getting Started</a>
+            <a href="#import">Import</a>
+            <a href="#cli-usage">CLI Usage</a>
+            <a href="#examples">Examples</a>
+            <a href="#regexbuilder---beginner-friendly-api">RegexBuilder - Beginner-Friendly API</a>
+            <a href="#built-in-validators">Built-in Validators</a>
+            <a href="#license">License</a>
+            <a href="#contributing">Contributing</a>
+            <a href="#connect-with-me">Connect with Me</a>
+        </nav>
+
+        <h2 id="getting-started">Getting Started</h2>
+        <p>You can install the module via <code>npm</code> or <code>yarn</code>:</p>
+        <pre><code>npm install regex-builder</code></pre>
+        <pre><code>yarn add regex-builder</code></pre>
+
+        <h2 id="import">Import</h2>
+        <pre><code>
+// Using ES6 imports
+import { regex } from "regex-builder";
+
+// Using Node.js <code>require()</code>
+const { regex } = require("regex-builder");
+        </code></pre>
+
+        <h2 id="cli-usage">CLI Usage</h2>
+        <p>regex-builder includes a handy CLI tool for quick testing of regex patterns directly from the terminal.</p>
+        <h3>Test a Regex Pattern</h3>
+        <pre><code>npx regex-tester "email" user@example.com</code></pre>
+
+        <h2 id="examples">Examples</h2>
+
+        <h3>Example 1:</h3>
+        <pre><code>
+import { regex } from "regex-builder";
+
+const pattern = regex().digit().oneOrMore().toRegex();
+console.log(pattern.test("12345")); // true
+console.log(pattern.test("abc")); // false
+        </code></pre>
+
+        <h3>Example 2</h3>
+        <pre><code>
+import { validate } from "regex-builder";
+
+const isValidEmail = validate("email", "test@example.com");
+console.log(isValidEmail); // true
+        </code></pre>
+
+        <h2 id="regexbuilder---beginner-friendly-api">RegexBuilder - Beginner-Friendly API</h2>
+        <h3>Character Classes</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Method</th>
+                    <th>Usage</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>digit()</code></td>
+                    <td>Matches any digit from 0 to 9</td>
+                    <td><code>regex().digit()</code> on <code>"123"</code> → matches <code>["1", "2", "3"]</code></td>
+                </tr>
+                <tr>
+                    <td><code>letter()</code></td>
+                    <td>Matches any uppercase or lowercase letter</td>
+                    <td><code>regex().letter()</code> on <code>"aB1"</code> → matches <code>["a", "B"]</code></td>
+                </tr>
+                <tr>
+                    <td><code>lowercase()</code></td>
+                    <td>Matches lowercase letters only</td>
+                    <td><code>regex().lowercase()</code> on <code>"abAB"</code> → matches <code>["a", "b"]</code></td>
+                </tr>
+                <tr>
+                    <td><code>uppercase()</code></td>
+                    <td>Matches uppercase letters only</td>
+                    <td><code>regex().uppercase()</code> on <code>"abAB"</code> → matches <code>["A", "B"]</code></td>
+                </tr>
+                <tr>
+                    <td><code>lettersOrNumbers()</code></td>
+                    <td>Matches any letter or digit</td>
+                    <td><code>regex().lettersOrNumbers()</code> on <code>"abc123$%"</code> → matches
+                        <code>["a", "b", "c", "1", "2", "3"]</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>whitespace()</code></td>
+                    <td>Matches spaces, tabs, newlines</td>
+                    <td><code>regex().whitespace()</code> on <code>"a b\tc\n"</code> → matches
+                        <code>[" ", "\t", "\n"]</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>nonWhitespace()</code></td>
+                    <td>Matches any non-space character</td>
+                    <td><code>regex().nonWhitespace()</code> on <code>"a b"</code> → matches <code>["a", "b"]</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>wordChar()</code></td>
+                    <td>Matches letters, numbers, or underscore</td>
+                    <td><code>regex().wordChar()</code> on <code>"a_1!"</code> → matches <code>["a", "_", "1"]</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>nonWordChar()</code></td>
+                    <td>Matches non-word characters</td>
+                    <td><code>regex().nonWordChar()</code> on <code>"a_1!"</code> → matches <code>["!"]</code></td>
+                </tr>
+                <tr>
+                    <td><code>anyChar()</code></td>
+                    <td>Matches any single character</td>
+                    <td><code>regex().anyChar()</code> on <code>"abc"</code> → matches <code>["a", "b", "c"]</code></td>
+                </tr>
+                <tr>
+                    <td><code>custom("abc")</code></td>
+                    <td>Matches specific characters</td>
+                    <td><code>regex().custom("abc")</code> on <code>"abcd"</code> → matches <code>["a", "b", "c"]</code>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Quantifiers</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Method</th>
+                    <th>Usage</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>one()</code></td>
+                    <td>Matches exactly once</td>
+                    <td><code>regex().digit().one()</code> on <code>"123"</code> → matches <code>"1"</code></td>
+                </tr>
+                <tr>
+                    <td><code>zeroOrMore()</code></td>
+                    <td>Matches zero or more times</td>
+                    <td><code>regex().digit().zeroOrMore()</code> on <code>"abc123xyz"</code> → matches
+                        <code>"123"</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>oneOrMore()</code></td>
+                    <td>Matches one or more times</td>
+                    <td><code>regex().digit().oneOrMore()</code> on <code>"abc456"</code> → matches <code>"456"</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>optional()</code></td>
+                    <td>Matches once or not at all</td>
+                    <td><code>regex().letter().optional()</code> on <code>"9a"</code> → matches <code>"a"</code></td>
+                </tr>
+                <tr>
+                    <td><code>between(2, 4)</code></td>
+                    <td>Matches 2 to 4 times</td>
+                    <td><code>regex().digit().between(2, 4)</code> on <code>"12345"</code> → matches <code>"1234"</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>exactly(3)</code></td>
+                    <td>Matches exactly 3 times</td>
+                    <td><code>regex().digit().exactly(3)</code> on <code>"007"</code> → matches <code>"007"</code></td>
+                </tr>
+                <tr>
+                    <td><code>atLeast(5)</code></td>
+                    <td>Matches 5 or more times</td>
+                    <td><code>regex().digit().atLeast(5)</code> on <code>"1234567"</code> → matches
+                        <code>"1234567"</code>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Anchors &amp; Structure</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Method</th>
+                    <th>Usage</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>start()</code></td>
+                    <td>Match must start at beginning</td>
+                    <td><code>regex().start().letter()</code> on <code>"Abc"</code> → matches <code>"A"</code></td>
+                </tr>
+                <tr>
+                    <td><code>end()</code></td>
+                    <td>Match must end at end</td>
+                    <td><code>regex().digit().end()</code> on <code>"room5"</code> → matches <code>"5"</code></td>
+                </tr>
+                <tr>
+                    <td><code>strict()</code></td>
+                    <td>Matches the entire string exactly</td>
+                    <td><code>regex().digit().strict()</code> on <code>"3"</code> → matches <code>"3"</code></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Grouping &amp; Logic</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Method</th>
+                    <th>Usage</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>group(fn)</code></td>
+                    <td>Groups part of the pattern (non-capturing)</td>
+                    <td><code>regex().group(r =&gt; r.digit().oneOrMore())</code> on <code>"123"</code> → matches
+                        <code>"123"</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>capture(fn)</code></td>
+                    <td>Captures part of the pattern</td>
+                    <td><code>regex().capture(r =&gt; r.letter().exactly(2))</code> on <code>"AB123"</code> → matches
+                        <code>"AB"</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>or()</code></td>
+                    <td>Matches one pattern or another</td>
+                    <td><code>regex().digit().or().letter()</code> on <code>"3B"</code> → matches
+                        <code>["3", "B"]</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>then("abc")</code></td>
+                    <td>Matches exact string</td>
+                    <td><code>regex().then("abc")</code> on <code>"abc123"</code> → matches <code>"abc"</code></td>
+                </tr>
+                <tr>
+                    <td><code>raw("[A-Z]+")</code></td>
+                    <td>Insert custom raw regex</td>
+                    <td><code>regex().raw("[A-Z]+")</code> on <code>"GoUSA"</code> → matches <code>["G", "USA"]</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>not("abc")</code></td>
+                    <td>Match if next part is NOT "abc"</td>
+                    <td><code>regex().not("abc").then("def")</code> on <code>"def"</code> → matches <code>"def"</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>lookahead("xyz")</code></td>
+                    <td>Match only if followed by "xyz"</td>
+                    <td><code>regex().letter().lookahead("xyz")</code> on <code>"Axyz"</code> → matches <code>"A"</code>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Output &amp; Testing</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Method</th>
+                    <th>Usage</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>toRegex("g")</code></td>
+                    <td>Returns RegExp object</td>
+                    <td><code>regex().digit().toRegex("g")</code> on <code>"a1b2"</code> → matches
+                        <code>["1", "2"]</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>toString()</code></td>
+                    <td>Returns regex string</td>
+                    <td><code>regex().digit().toString()</code> → <code>"\\d"</code></td>
+                </tr>
+                <tr>
+                    <td><code>test(input)</code></td>
+                    <td>Tests if the pattern matches input string (returns boolean)</td>
+                    <td><code>regex().letter().test("abc")</code> → <code>true</code></td>
+                </tr>
+                <tr>
+                    <td><code>match("a1b2")</code></td>
+                    <td>Finds matches in string</td>
+                    <td><code>regex().digit().match("a1b2")</code> → <code>["1", "2"]</code></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Built-in Validators</h2>
+        <p>Use the <code>validate</code> function with the validator name and the value to check if it
+            is valid.</p>
+
+        <h3>General Validators</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Validator</th>
+                    <th>Usage</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>email</code></td>
+                    <td><code>validate("email", value)</code></td>
+                    <td><code>validate("email", "test@example.com") → true</code></td>
+                </tr>
+                <tr>
+                    <td><code>phone</code></td>
+                    <td><code>validate("phone", value)</code></td>
+                    <td><code>validate("phone", "+12345678901") → true</code></td>
+                </tr>
+                <tr>
+                    <td><code>url</code></td>
+                    <td><code>validate("url", value)</code></td>
+                    <td><code>validate("url", "https://example.com") → true</code></td>
+                </tr>
+                <tr>
+                    <td><code>uuid</code></td>
+                    <td><code>validate("uuid", value)</code></td>
+                    <td><code>validate("uuid", "123e4567-e89b-12d3-a456-426614174000") → true</code>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Format & Pattern Validators</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Validator</th>
+                    <th>Usage</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>username</code></td>
+                    <td><code>validate("username", value)</code></td>
+                    <td><code>validate("username", "user_123") → true</code></td>
+                </tr>
+                <tr>
+                    <td><code>password</code></td>
+                    <td><code>validate("password", value)</code></td>
+                    <td><code>validate("password", "abc123") → true</code></td>
+                </tr>
+                <tr>
+                    <td><code>slug</code></td>
+                    <td><code>validate("slug", value)</code></td>
+                    <td><code>validate("slug", "my-url-slug") → true</code></td>
+                </tr>
+                <tr>
+                    <td><code>hex</code></td>
+                    <td><code>validate("hex", value)</code></td>
+                    <td><code>validate("hex", "#ff0033") → true</code></td>
+                </tr>
+                <tr>
+                    <td><code>htmlTag</code></td>
+                    <td><code>validate("htmlTag", value)</code></td>
+                    <td><code>validate("htmlTag", "&lt;div&gt;") → true</code></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Date & Time Validators</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Validator</th>
+                    <th>Usage</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>date</code></td>
+                    <td><code>validate("date", value)</code></td>
+                    <td><code>validate("date", "2025-06-08") → true</code></td>
+                </tr>
+                <tr>
+                    <td><code>time</code></td>
+                    <td><code>validate("time", value)</code></td>
+                    <td><code>validate("time", "23:59") → true</code></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Network Validators</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Validator</th>
+                    <th>Usage</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>ipv4</code></td>
+                    <td><code>validate("ipv4", value)</code></td>
+                    <td><code>validate("ipv4", "192.168.0.1") → true</code></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr />
+
+        <h2>License</h2>
+        <p>This project is licensed under the <a href="https://opensource.org/licenses/MIT" target="_blank"
+                rel="noopener noreferrer">MIT License</a>.
+            Feel free to use, modify, and distribute it freely.</p>
+
+        <h2>Contributing</h2>
+        <p>Contributions, issues, and feature requests are welcome!<br />
+            Feel free to check the <a href="https://github.com/tufanmahanty/regex-builder/issues" target="_blank"
+                rel="noopener noreferrer">issues page</a> or submit a pull request.</p>
+
+        <h2>Connect with Me</h2>
+        <ul>
+            <li><a href="https://github.com/tufanmahanty" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/tufanmahanty/" target="_blank"
+                    rel="noopener noreferrer">LinkedIn</a></li>
+        </ul>
+        </div>
+</body>
+
+</html>

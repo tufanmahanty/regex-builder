@@ -1,0 +1,53 @@
+{
+  "name": "regex-builder",
+  "version": "1.0.0",
+  "description": "A chainable regex builder and validator",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "bin": {
+    "regex-tester": "./dist/cli.js"
+  },
+  "scripts": {
+    "dev": "tsup --watch",
+    "build": "tsup",
+    "lint": "eslint src --ext .ts",
+    "test": "echo \"No tests yet\""
+  },
+  "keywords": [
+    "regex",
+    "builder",
+    "typescript",
+    "validator",
+    "cli"
+  ],
+  "author": "Tufan Mahanty",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tufanmahanty/regex-builder.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tufanmahanty/regex-builder/issues"
+  },
+  "homepage": "https://github.com/tufanmahanty/regex-builder#readme",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "devDependencies": {
+    "@types/node": "^22.15.30",
+    "@typescript-eslint/eslint-plugin": "^8.33.1",
+    "@typescript-eslint/parser": "^8.33.1",
+    "eslint": "^9.28.0",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3"
+  }
+}
