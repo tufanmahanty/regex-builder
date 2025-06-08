@@ -1,7 +1,7 @@
 {
-  "name": "regex-builder",
+  "name": "regexp-toolkit",
   "version": "1.0.0",
-  "description": "A chainable regex builder and validator",
+  "description": "A chainable regexp builder and validator",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -26,23 +26,26 @@
     "typescript",
     "validator",
     "cli",
-    "regex-builder",
+    "regexp-toolkit",
     "regex-validator",
     "regex-cli",
     "smart-regex",
     "regexp",
-    "validation"
+    "validation",
+    "regex-patterns",
+    "regexp-toolkit",
+    "match"
   ],
   "author": "Tufan Mahanty",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tufanmahanty/regex-builder.git"
+    "url": "git+https://github.com/tufanmahanty/regexp-toolkit.git"
   },
   "bugs": {
-    "url": "https://github.com/tufanmahanty/regex-builder/issues"
+    "url": "https://github.com/tufanmahanty/regexp-toolkit/issues"
   },
-  "homepage": "https://tufanmahanty.github.io/regex-builder/",
+  "homepage": "https://tufanmahanty.github.io/regexp-toolkit/",
   "files": [
     "dist",
     "README.md",

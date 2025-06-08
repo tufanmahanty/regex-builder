@@ -1,7 +1,7 @@
-# Regex-Builder : Build Custom Regular Expressions with Ease
+# Regexp-Toolkit : Build Custom Regular Expressions with Ease
 
-![npm](https://img.shields.io/npm/v/regex-builder)
-![license](https://img.shields.io/npm/l/regex-builder)
+![npm](https://img.shields.io/npm/v/regexp-toolkit)
+![license](https://img.shields.io/npm/l/regexp-toolkit)
 ![typescript](https://img.shields.io/badge/Made%20with-TypeScript-blue)
 
 ## Core Features
@@ -28,7 +28,7 @@
 - [Import](#import)
 - [CLI Usage](#cli-usage)
 - [Examples](#examples)
-- [RegexBuilder - Beginner-Friendly API](#regexbuilder---beginner-friendly-api)
+- [Regexp Method - Beginner-Friendly API](#regexp-method---beginner-friendly-api)
   - [Character Classes](#character-classes)
   - [Quantifiers](#quantifiers)
   - [Anchors & Structure](#anchors--structure)
@@ -48,26 +48,26 @@
 You can install the module via `npm` or `yarn`:
 
 ```sh
-npm install regex-builder
+npm install regexp-toolkit
 ```
 
 ```sh
-yarn add regex-builder
+yarn add regexp-toolkit
 ```
 
 ## Import
 
 ```ts
 // Using ES6 imports
-import { regex } from "regex-builder";
+import { regex } from "regexp-toolkit";
 
 // Using Node.js `require()`
-const { regex } = require("regex-builder");
+const { regex } = require("regexp-toolkit");
 ```
 
 ## CLI Usage
 
-regex-builder includes a handy CLI tool for quick testing of regex patterns directly from the terminal.
+regexp-toolkit includes a handy CLI tool for quick testing of regex patterns directly from the terminal.
 
 ### Test a Regex Pattern
 
@@ -80,7 +80,7 @@ npx regex-tester "email" user@example.com
 #### Example 1:
 
 ```ts
-import { regex } from "regex-builder";
+import { regex } from "regexp-toolkit";
 
 const pattern = regex().digit().oneOrMore().toRegex();
 console.log(pattern.test("12345")); // true
@@ -90,13 +90,13 @@ console.log(pattern.test("abc")); // false
 #### Example 2
 
 ```ts
-import { validate } from "regex-builder";
+import { validate } from "regexp-toolkit";
 
 const isValidEmail = validate("email", "test@example.com");
 console.log(isValidEmail); // true
 ```
 
-## RegexBuilder - Beginner-Friendly API
+## Regexp Method - Beginner-Friendly API
 
 ### Character Classes
 
@@ -199,7 +199,7 @@ Feel free to use, modify, and distribute it freely.
 ## Contributing
 
 Contributions, issues, and feature requests are welcome!  
-Feel free to check the [issues page](https://github.com/tufanmahanty/regex-builder/issues) or submit a pull request.
+Feel free to check the [issues page](https://github.com/tufanmahanty/regexp-toolkit/issues) or submit a pull request.
 
 ## Connect with Me
 

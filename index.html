@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Regex-Builder Documentation</title>
+    <title>Regexp-Toolkit Documentation</title>
     <style>
         /* Reset box-sizing */
         *,
@@ -202,10 +202,10 @@
 
 <body>
     <main>
-        <h1>Regex-Builder : Build Custom Regular Expressions with Ease</h1>
+        <h1>Regexp-Toolkit : Build Custom Regular Expressions with Ease</h1>
         <div class="badges" aria-label="npm version, license, build status, typescript badge">
-            <img src="https://img.shields.io/npm/v/regex-builder" alt="npm version" />
-            <img src="https://img.shields.io/npm/l/regex-builder" alt="license" />
+            <img src="https://img.shields.io/npm/v/regexp-toolkit" alt="npm version" />
+            <img src="https://img.shields.io/npm/l/regexp-toolkit" alt="license" />
             <img src="https://img.shields.io/badge/Made%20with-TypeScript-blue" alt="typescript" />
         </div>
 
@@ -228,7 +228,7 @@
                 <li><a href="#import">Import</a></li>
                 <li><a href="#cli-usage">CLI Usage</a></li>
                 <li><a href="#examples">Examples</a></li>
-                <li><a href="#regexbuilder---beginner-friendly-api">RegexBuilder - Beginner-Friendly API </a>
+                <li><a href="#regexp-method---beginner-friendly-api">Regexp Method - Beginner-Friendly API </a>
                     <ul>
                         <li><a href="#character-classes">Character Classes</a></li>
                         <li><a href="#quantifiers">Quantifiers</a></li>
@@ -253,20 +253,20 @@
 
         <h2 id="getting-started">Getting Started</h2>
         <p>You can install the module via <code>npm</code> or <code>yarn</code>:</p>
-        <pre><code>npm install regex-builder</code></pre>
-        <pre><code>yarn add regex-builder</code></pre>
+        <pre><code>npm install regexp-toolkit</code></pre>
+        <pre><code>yarn add regexp-toolkit</code></pre>
 
         <h2 id="import">Import</h2>
         <pre><code>
 // Using ES6 imports
-import { regex } from "regex-builder";
+import { regex } from "regexp-toolkit";
 
 // Using Node.js <code>require()</code>
-const { regex } = require("regex-builder");
+const { regex } = require("regexp-toolkit");
         </code></pre>
 
         <h2 id="cli-usage">CLI Usage</h2>
-        <p>regex-builder includes a handy CLI tool for quick testing of regex patterns directly from the terminal.</p>
+        <p>regexp-toolkit includes a handy CLI tool for quick testing of regex patterns directly from the terminal.</p>
         <h3>Test a Regex Pattern</h3>
         <pre><code>npx regex-tester "email" user@example.com</code></pre>
 
@@ -274,7 +274,7 @@ const { regex } = require("regex-builder");
 
         <h3>Example 1:</h3>
         <pre><code>
-import { regex } from "regex-builder";
+import { regex } from "regexp-toolkit";
 
 const pattern = regex().digit().oneOrMore().toRegex();
 console.log(pattern.test("12345")); // true
@@ -283,13 +283,13 @@ console.log(pattern.test("abc")); // false
 
         <h3>Example 2</h3>
         <pre><code>
-import { validate } from "regex-builder";
+import { validate } from "regexp-toolkit";
 
 const isValidEmail = validate("email", "test@example.com");
 console.log(isValidEmail); // true
         </code></pre>
 
-        <h2 id="regexbuilder---beginner-friendly-api">RegexBuilder - Beginner-Friendly API</h2>
+        <h2 id="regexp-method---beginner-friendly-api">Regexp Method - Beginner-Friendly API</h2>
         <h3 id="character-classes">Character Classes</h3>
         <table>
             <thead>
@@ -665,7 +665,7 @@ console.log(isValidEmail); // true
 
         <h2 id="contributing">Contributing</h2>
         <p>Contributions, issues, and feature requests are welcome!<br />
-            Feel free to check the <a href="https://github.com/tufanmahanty/regex-builder/issues" target="_blank"
+            Feel free to check the <a href="https://github.com/tufanmahanty/regexp-toolkit/issues" target="_blank"
                 rel="noopener noreferrer">issues page</a> or submit a pull request.</p>
 
         <h2 id="connect-with-me">Connect with Me</h2>
