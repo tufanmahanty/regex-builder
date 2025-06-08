@@ -36,7 +36,7 @@
   "bugs": {
     "url": "https://github.com/tufanmahanty/regex-builder/issues"
   },
-  "homepage": "https://github.com/tufanmahanty/regex-builder#readme",
+  "homepage": "https://tufanmahanty.github.io/regex-builder/",
   "files": [
     "dist",
     "README.md",
